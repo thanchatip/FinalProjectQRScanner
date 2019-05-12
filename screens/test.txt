@@ -1,0 +1,63 @@
+ <Container>
+        <Content>
+        <Text style={{marginTop:10}}>รหัส :{codeId} </Text>
+          <Form>
+            <Item stackedLabel style={{marginTop:20}} onChangeText={(yourName) => this.setState({yourName})}>
+              <Label>ชื่อผู้รายงาน</Label>
+              <Input />
+            </Item>
+
+            <List style={{marginTop:20}}>
+            <Text>สภาพ</Text>
+            <ListItem>
+              <CheckBox checked ={true} />
+              <Body>
+                <Text>  ชำรุด</Text>
+              </Body>
+            </ListItem>
+            <ListItem>         
+              <CheckBox checked ={false} />
+              <Body>
+                <Text>  ที่ตั้งไม่ตรงกับข้อมูล</Text>
+              </Body>
+              
+            </ListItem>
+            </List>
+
+            <Item stackedLabel >
+              <Label>อื่นๆ (โปรดระบุ) </Label>
+              <Input />
+            </Item>
+          </Form>
+        <View style={{marginTop:40,alignItems:'center',justifyContent:'center'}}>
+        <Button  block style={{backgroundColor:'#5F56B0'}} onPress={()=>{this.props.navigation.navigate('Notification',{codeId:codeId})}}>
+            <Text style={{color :'white',fontSize: 18 }}>Submit</Text>
+        </Button>
+        </View>
+        </Content>
+      </Container>
+
+      //new
+
+      <View style={styles.container}>
+       <TextInput
+          placeholder="ชื่อผู้แจ้ง"
+          value={username}
+          onChangeText={this.handleNameChanged}
+          editable={!disabled}
+        />
+        
+        <TextInput
+          placeholder="Comment"
+          style={styles.comment}
+          multiline={true}
+          value={comment}
+          onChangeText={this.handleCommentChanged}
+          editable={!disabled}
+        />
+        <Button style = {{color :'#5F56B0'}}
+          title="Add a comment"
+          onPress={onAddComment}
+          disabled={disabled}
+        />
+      </View>

@@ -1,1 +1,1 @@
-# FinalProjectQRScanner
+# projApp
